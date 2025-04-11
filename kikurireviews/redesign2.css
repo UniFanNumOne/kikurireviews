@@ -1,0 +1,143 @@
+/*  --------- Colors  ---------  */
+
+/* Header and footer */
+header, footer {
+	/* Simple mode */
+	background-color: var(--header-footer-bg);
+	/* Fancy mode (falls back to simple if set incorrectly) */
+	background: radial-gradient(circle, var(--headfoot-gradient-1, --header-footer-bg) 50%, var(--headfoot-gradient-2, --header-footer-bg) 100%);
+}
+/* Header/footer text */
+header, footer, header a, footer a {color: var(--header-footer-text);}
+
+/* Main */
+main, .sidebar {
+	background-color: var(--main-bg);
+}
+
+/* Background */
+body {background: var(--body-bg); background-image: var(--body-bg-image);}
+
+/* Dark theme color swaps */
+@media screen and (prefers-color-scheme: dark) {
+	body {background: var(--body-bg-image-dark, --body-bg-dark, --body-bg);}
+	header, footer {background: var(--header-footer-bg-dark, --header-footer-text); color: var(--header-footer-text-dark, --header-footer-bg);}
+	main, .sidebar {background: var(--main-bg-dark, --main-bg); color: var(--body-text-dark, --body-text);}
+}
+
+/* --------- General styling ------------ */
+
+/* Setting the max width of everything to be an accessible size */
+footer, main * {margin: 0 auto; padding: 0.5em; max-width: 100%;}
+
+/* Font settings */
+body {
+	font-family: var(--body-font), sans-serif;
+	font-size: 1em;
+	line-height: 1.5em;
+	overflow-x: hidden;
+}
+
+/* This is what puts things side-by-side */
+.container {
+	display: flex; gap: 5px; 
+	justify-content: center;
+}
+
+main {
+	margin-top: 0;		/* Keep main flush to header */
+	padding-top: 1em;	/* Spacing for aesthetic appeal */
+	min-height: 80vh;	/* Makes sure main will fill at least 80% of the screen height */
+	max-height: 80vh; /* ...and no more than that */
+	max-width: 95ch;	/* Limits main width */
+	overflow: scroll;	/* Makes main scroll instead of expanding below the screen */
+	overflow-x: hidden;	/* No horizontal scrollbar, though */
+	flex-grow: 3;		/* Allow main to take more space than nav */
+}
+/* More space inside main and footer without messing up sizing */
+main > *, footer > * {margin: auto 1em; max-width: 80ch;}
+
+main p {margin-bottom: 0.5em;}	/* Space out paragraphs */
+
+/* Color links */
+main a:link, nav a:link {color: var(--link-text);}
+main a:visited, nav a:visited {color: var(--visited-link-text);}
+
+img {max-width: 100%;}	/* Keep images inside main! */
+
+/* The sidebar; mostly puts it into position */
+.sidebar {
+	flex-grow: 0;
+	flex-shrink: 1;
+	padding: 1em;
+	min-width: 20ch;
+}
+/* Space list items nicely */
+nav ul {padding: 0.4em 0.5em;}
+nav ul li {margin-bottom: 0.8em; display: block;}
+nav ul li:before {content: "♡ ";}
+
+.sidebar, main {margin: 0.5em; border-radius: 5px;}
+
+/* The profile box */
+.box {padding: 0.5em; border: 2px dotted var(--border-color); border-radius: 5px;}
+.box img {max-width: 200px; max-height: 200px; border-radius: 5px;}
+.box p {margin: 0;}
+
+/* Horizontal rule / the line */
+hr {background: radial-gradient(circle, var(--border-color, --header-footer-bg) 50%, var(--headfoot-gradient-2, --header-footer-bg) 100%); height: 1px; padding: 0; border: none;}
+
+/* --------- Header/footer styling ------------ */
+
+header h1 {font-family: var(--title-font), sans-serif;}	/* Sets font specified in customization.css */
+header h1:before, header h1:after {content: " ~~ ";}	/* Decorative text around header */
+
+header {
+	margin: 0.5em auto 0 auto;
+	max-width: 125ch;
+	text-align: center;				/* Centered text */
+	padding: 0.2em;
+}
+
+footer {
+	max-width: 124ch;
+	text-align: center;
+}
+footer p {margin: auto;}
+
+header h1 a {text-decoration: none; font-size: 1em; line-height: 1em;}	/* Remove underlines on title text, makes it bigger */
+
+/* -------- Hover and focus ------------- */
+a:hover {opacity: 0.75;}							/* Dim links on hover */
+*:focus {outline: 2px solid var(--focus-outline);}	/* Outline focused items */
+
+/*  --------- Responsiveness  ---------  */
+
+/* No weird gaps around the site */
+body {margin: 0; padding: 0;}
+
+/* Adjusting a few adjustments for mobile */
+@media screen and (max-width: 1000px) {
+	main {max-height: 100%; max-width: 100%; padding-top: 0;}
+	main * {margin: auto;}
+	header, footer {border-radius: 0; padding: 0.2em 0; border: none; margin: 0;}
+	header, footer, main {max-width: 100%;}
+	header h1:before, header h1:after {content: "";}
+	header {margin-bottom: 1px;}
+	footer {margin-top: 0.2em;}
+	.sidebar, main {margin: 0em;}
+	.sidebar {padding-bottom: 0;}
+	.sidebar .box, nav {margin: auto; max-width: 60ch; text-align: center;}
+	.sidebar .box img {float: left; margin-left: -2em; padding-left: 1em;}
+	.container {flex-direction: column; gap: 0;}
+	.container * {border-radius: 0; border: 0;}
+	nav ul, nav ul li {display: inline-block; padding: 0 0.4em; text-align: center;}
+	.box {margin: 0.5em; border-bottom: 2px solid var(--border-color);}
+	.box img {max-width: 100px; max-height: 100px; margin: 0.1em; padding: 0; padding-left: 0 !important;}
+}
+
+@media screen and (max-width: 600px) {
+	.box img {margin-left: 0 !important; float: none !important;}
+	.sidebar {border-bottom: 2px solid var(--border-color); padding-bottom: 0.5em;}
+	nav ul {margin-bottom: 0;}
+}

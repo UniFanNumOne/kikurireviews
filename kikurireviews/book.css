@@ -1,0 +1,145 @@
+
+/* You can either copy the below and paste it between style tags on your HTML page, OR you can copy this to a file and name it .css and link it from your HTML page. */
+
+:root {
+  --accent-light: #fb90b6;
+  --accent-dark: #c9507a;
+  --accent-muted: #afafaf;
+}
+
+html,
+body {
+  margin: 0;
+  font-family: "Verdana";
+  font-size: 10px;
+  background-color: pink;
+  background-image: url("https://sadgrl.online/images/bgs/tile/heartpinkpas.gif");
+}
+strong {
+  color: var(--accent-dark);
+}
+em {
+  color: var(--accent-light);
+}
+u {
+  color: var(--accent-dark);
+}
+a {
+  color: var(--accent-dark);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.wrapper {
+  padding: 20px;
+}
+
+.container {
+  position: relative;
+  content: "";
+  background-image: url("https://sadgrl.online/images/lyts/not-mine/notebook-collage.png");
+  background-repeat: no-repeat;
+  height: 100%;
+  max-width: 900px;
+  height: 770px;
+  margin: 0 auto;
+}
+.post-it,
+.white-box,
+.notebook,
+.yellow-note {
+  position: absolute;
+}
+.post-it {
+  top: 20px;
+  left: 40px;
+  width: 130px;
+}
+.white-box {
+  top: 20px;
+  left: 180px;
+  width: 500px;
+  height: 100px;
+  overflow: hidden;
+}
+.notebook {
+  top: 172px;
+  left: 145px;
+}
+.notebook > .wrapper {
+  overflow: auto;
+  height: 450px;
+  width: 380px;
+  padding-right: 84px;
+  scrollbar-width: thin; /* "auto" or "thin" */
+  scrollbar-color: #000 #c4c4c4; /* scroll thumb and track */
+}
+.notebook > .wrapper p {
+  line-height: 16.2px;
+  margin-bottom: 16.5px;
+}
+.yellow-note {
+  left: 640px;
+  top: 160px;
+  width: 180px;
+  height: 550px;
+  overflow: auto;
+  scrollbar-width: thin; /* "auto" or "thin" */
+  scrollbar-color: #e8d866 #d6ca71; /* scroll thumb and track */
+}
+.title {
+  font-size: 35px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-bottom: 3px dotted var(--accent-muted);
+  color: var(--accent-dark);
+}
+.content {
+}
+.subtitle {
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-bottom: 3px dotted var(--accent-muted);
+  margin-bottom: 10px;
+  color: var(--accent-dark);
+}
+ul.pixelbullets {
+  list-style-image: url("https://sadgrl.online/images/lyts/not-mine/hearth_rosa.gif");
+  padding-left: 25px;
+}
+.page-title {
+  font-size: 25px;
+  padding-bottom: 4px;
+  color: var(--accent-dark);
+  font-weight: bold;
+}
+.footer {
+  text-align:center;
+}
+
+.yellow-note::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+
+.yellow-note::-webkit-scrollbar-track {
+  background: #e8d866; /* color of the tracking area */
+}
+
+.yellow-note::-webkit-scrollbar-thumb {
+  background-color: #d6ca71; /* color of the scroll thumb */
+}
+.notebook > .wrapper::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+
+.notebook > .wrapper::-webkit-scrollbar-track {
+  background: #c4c4c4;; /* color of the tracking area */
+}
+
+.notebook > .wrapper::-webkit-scrollbar-thumb {
+  background-color:  #000; /* color of the scroll thumb */
+}
+.removeThis {
+  background-color:yellow;
+}

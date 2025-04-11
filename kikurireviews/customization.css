@@ -1,0 +1,66 @@
+/* There are two sets of color/customization variables here.
+ *
+ * One is fancier, but may be harder to use if you've never used CSS before.
+ * The other is simple and perfect for getting started.
+ *
+ * The complex version is the default; changing the simple version
+ * will not change anything while it's active.
+ *
+ * To switch to the simple version, just comment out or delete the
+ * complex version's section.
+ *
+ * Enjoy, and good luck! */
+
+/* ---------- Simple ------------ */
+
+:root {
+	--header-footer-bg: #de6ca3;
+	--body-bg: #f5c7e7;
+	--main-bg: #fff9ff;
+
+	--header-footer-text: #fcfcfc;
+	--body-text: #0c0c0c;
+	--link-text: #c55c97;
+	--visited-link-text: #c76eff;
+
+	--focus-outline: red;
+	--border-color: #cf9dbc;
+
+	--body-font: "Arial";
+	--title-font: "Courier New";
+}
+
+/* Delete everything below this line to switch to simple */
+
+/* ---------- Fancy ------------ */
+
+/* Suggested tools:
+ * https://cssgradient.io/ url("./images/bg.png")
+ */
+
+:root {
+	--headfoot-gradient-1: #de6ca3;
+	--headfoot-gradient-2: #f075b2;
+	--body-bg-image: url("./images/tileable-wood-colored.png");
+
+	/* Dark theme adjustments */
+	--header-footer-bg-dark: #683343;
+	--body-bg-dark: #3a2a2b;
+	--main-bg-dark: #271e20;
+	--header-footer-text-dark: #d3d3d3;
+	--body-text-dark: #f3f3f3;
+	--link-text-dark: #a3b8d3;
+	--visited-link-text-dark: #e3c4ff;
+	--body-bg-image-dark: url("./bg.png");
+}
+
+/* Title font definition */
+header h1 {font-family: "Dyslexie", "OpenDyslexic", 'GrapeNuts', Serif;}
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'GrapeNuts';
+  font-style: normal;
+  font-weight: 400;
+  src: local("GrapeNuts Regular"),
+  url('./fonts/GrapeNuts-Regular.ttf') format('truetype');
+}
